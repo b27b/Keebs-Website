@@ -59,9 +59,13 @@ export default async function Page({ params: { slug = 'home' } }) {
   return (
     <React.Fragment>
       {slug === 'home' ? (
+<section>
 
             <Hero {...hero} />
-   
+            <Gutter className={classes.home}>
+
+            </Gutter>
+</section>
       ) : (
         <>
            <Hero {...hero} />

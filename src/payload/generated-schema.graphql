@@ -1078,11 +1078,174 @@ enum Archive_relationTo {
 
 type Category {
   id: String
-  title: String
+  title: String!
+  meda(where: Category_Meda_where): Media
   parent: Category
   breadcrumbs: [Category_Breadcrumbs!]
   updatedAt: DateTime
   createdAt: DateTime
+}
+
+input Category_Meda_where {
+  alt: Category_Meda_alt_operator
+  caption: Category_Meda_caption_operator
+  updatedAt: Category_Meda_updatedAt_operator
+  createdAt: Category_Meda_createdAt_operator
+  url: Category_Meda_url_operator
+  filename: Category_Meda_filename_operator
+  mimeType: Category_Meda_mimeType_operator
+  filesize: Category_Meda_filesize_operator
+  width: Category_Meda_width_operator
+  height: Category_Meda_height_operator
+  id: Category_Meda_id_operator
+  AND: [Category_Meda_where_and]
+  OR: [Category_Meda_where_or]
+}
+
+input Category_Meda_alt_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+}
+
+input Category_Meda_caption_operator {
+  equals: JSON
+  not_equals: JSON
+  like: JSON
+  contains: JSON
+  exists: Boolean
+}
+
+input Category_Meda_updatedAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input Category_Meda_createdAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input Category_Meda_url_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Meda_filename_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Meda_mimeType_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Meda_filesize_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Category_Meda_width_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Category_Meda_height_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input Category_Meda_id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input Category_Meda_where_and {
+  alt: Category_Meda_alt_operator
+  caption: Category_Meda_caption_operator
+  updatedAt: Category_Meda_updatedAt_operator
+  createdAt: Category_Meda_createdAt_operator
+  url: Category_Meda_url_operator
+  filename: Category_Meda_filename_operator
+  mimeType: Category_Meda_mimeType_operator
+  filesize: Category_Meda_filesize_operator
+  width: Category_Meda_width_operator
+  height: Category_Meda_height_operator
+  id: Category_Meda_id_operator
+  AND: [Category_Meda_where_and]
+  OR: [Category_Meda_where_or]
+}
+
+input Category_Meda_where_or {
+  alt: Category_Meda_alt_operator
+  caption: Category_Meda_caption_operator
+  updatedAt: Category_Meda_updatedAt_operator
+  createdAt: Category_Meda_createdAt_operator
+  url: Category_Meda_url_operator
+  filename: Category_Meda_filename_operator
+  mimeType: Category_Meda_mimeType_operator
+  filesize: Category_Meda_filesize_operator
+  width: Category_Meda_width_operator
+  height: Category_Meda_height_operator
+  id: Category_Meda_id_operator
+  AND: [Category_Meda_where_and]
+  OR: [Category_Meda_where_or]
 }
 
 type Category_Breadcrumbs {
@@ -5607,6 +5770,7 @@ type Categories {
 
 input Category_where {
   title: Category_title_operator
+  meda: Category_meda_operator
   parent: Category_parent_operator
   breadcrumbs__doc: Category_breadcrumbs__doc_operator
   breadcrumbs__url: Category_breadcrumbs__url_operator
@@ -5627,6 +5791,11 @@ input Category_title_operator {
   in: [String]
   not_in: [String]
   all: [String]
+}
+
+input Category_meda_operator {
+  equals: String
+  not_equals: String
   exists: Boolean
 }
 
@@ -5716,6 +5885,7 @@ input Category_id_operator {
 
 input Category_where_and {
   title: Category_title_operator
+  meda: Category_meda_operator
   parent: Category_parent_operator
   breadcrumbs__doc: Category_breadcrumbs__doc_operator
   breadcrumbs__url: Category_breadcrumbs__url_operator
@@ -5730,6 +5900,7 @@ input Category_where_and {
 
 input Category_where_or {
   title: Category_title_operator
+  meda: Category_meda_operator
   parent: Category_parent_operator
   breadcrumbs__doc: Category_breadcrumbs__doc_operator
   breadcrumbs__url: Category_breadcrumbs__url_operator
@@ -5752,6 +5923,7 @@ type categoriesDocAccess {
 
 type CategoriesDocAccessFields {
   title: CategoriesDocAccessFields_title
+  meda: CategoriesDocAccessFields_meda
   parent: CategoriesDocAccessFields_parent
   breadcrumbs: CategoriesDocAccessFields_breadcrumbs
   updatedAt: CategoriesDocAccessFields_updatedAt
@@ -5778,6 +5950,29 @@ type CategoriesDocAccessFields_title_Update {
 }
 
 type CategoriesDocAccessFields_title_Delete {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_meda {
+  create: CategoriesDocAccessFields_meda_Create
+  read: CategoriesDocAccessFields_meda_Read
+  update: CategoriesDocAccessFields_meda_Update
+  delete: CategoriesDocAccessFields_meda_Delete
+}
+
+type CategoriesDocAccessFields_meda_Create {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_meda_Read {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_meda_Update {
+  permission: Boolean!
+}
+
+type CategoriesDocAccessFields_meda_Delete {
   permission: Boolean!
 }
 
@@ -10104,6 +10299,7 @@ type categoriesAccess {
 
 type CategoriesFields {
   title: CategoriesFields_title
+  meda: CategoriesFields_meda
   parent: CategoriesFields_parent
   breadcrumbs: CategoriesFields_breadcrumbs
   updatedAt: CategoriesFields_updatedAt
@@ -10130,6 +10326,29 @@ type CategoriesFields_title_Update {
 }
 
 type CategoriesFields_title_Delete {
+  permission: Boolean!
+}
+
+type CategoriesFields_meda {
+  create: CategoriesFields_meda_Create
+  read: CategoriesFields_meda_Read
+  update: CategoriesFields_meda_Update
+  delete: CategoriesFields_meda_Delete
+}
+
+type CategoriesFields_meda_Create {
+  permission: Boolean!
+}
+
+type CategoriesFields_meda_Read {
+  permission: Boolean!
+}
+
+type CategoriesFields_meda_Update {
+  permission: Boolean!
+}
+
+type CategoriesFields_meda_Delete {
   permission: Boolean!
 }
 
@@ -12069,7 +12288,8 @@ input mutationMediaUpdateInput {
 }
 
 input mutationCategoryInput {
-  title: String
+  title: String!
+  meda: String
   parent: String
   breadcrumbs: [mutationCategory_BreadcrumbsInput]
   updatedAt: String
@@ -12085,6 +12305,7 @@ input mutationCategory_BreadcrumbsInput {
 
 input mutationCategoryUpdateInput {
   title: String
+  meda: String
   parent: String
   breadcrumbs: [mutationCategoryUpdate_BreadcrumbsInput]
   updatedAt: String

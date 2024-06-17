@@ -5,6 +5,7 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
+  color: white;
 
   @include small-break {
     margin: 0;
@@ -14,8 +15,8 @@
 .heroWrapper {
   background-color: var(--color-dark-50);
   width: 100%;
-  max-width: 1560px;
-  max-height: 884px;
+  max-height: 80vh;
+
   display: flex;
   align-items: center;
 
@@ -33,8 +34,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 15% var(--gutter-h);
-  width: 100%;
+  padding: 15% 100px;
+
 
   @include mid-break {
     padding: 10% 30px;
@@ -45,31 +46,41 @@
   }
 
   h2 {
-    font-size: 70px;
+    font-size: 48px;
     margin: 32px 0;
+    width: 60%;
 
     @include mid-break {
-      font-size: 48px;
+      font-size: 32px;
       margin: 24px 0;
+      width: 50%;
+
       white-space: wrap;
     }
 
     @include small-break {
       width: 70%;
-      font-size: 36px;
+      font-size: 24px;
       margin: 8px 0;
+      width: 50%;
+
     }
   }
 
   p {
-    font-size: 30px;
+    font-size: 24px;
+    width: 70%;
 
     @include mid-break {
-      font-size: 24px;
+      font-size: 16px;
+      width: 70%;
+
     }
 
     @include small-break {
-      font-size: 18px;
+      font-size: 14px;
+      width: 70%;
+
     }
   }
 }

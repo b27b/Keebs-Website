@@ -23,8 +23,8 @@ const queryMap = {
   },
   categories: {
     query : CATEGORIES,
-    key: 'Categores',
-  }
+    key: 'Categories',
+  },
 }
 
 export const fetchDocs = async <T>(

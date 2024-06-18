@@ -23,12 +23,13 @@
 
 .categories {
   display: flex;
-  flex-direction: column;
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 16px;
+  margin-bottom: 24px;
 
   @include large-break {
     flex-direction: row;
+    margin-bottom: 24px;
   }
 
   @include small-break {
@@ -59,4 +60,6 @@
 
 .hr {
   margin: 20px 0;
+  color: rgb(232, 231, 231);
+  width: 40%;
 }

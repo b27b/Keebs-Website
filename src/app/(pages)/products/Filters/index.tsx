@@ -6,16 +6,16 @@ import { useFilter } from '../../../_providers/Filter'
 import { Category } from '../../../../payload/payload-types'
 import { Checkbox } from '../../../_components/Checkbox'
 import { RadioButton } from '../../../_components/RadioButton'
-const Filters = ({ categories }: { categories: Category }) => {
+const Filters = ({ categories }: { categories: Category[] }) => {
   const { categoryFilters, sort, setCategoryFilters, setSort } = useFilter()
 
   const handleCategories = (categoryId: string) => {
-    if(catergoryFilters.includes(categoryId)){
-        const updatedcategories = categoryFilters.filter((id) => id !==
+    if(categoryFilters.includes(categoryId)){
+        const updatedCategories = categoryFilters.filter(id => id !==
     categoryId)
     setCategoryFilters(updatedCategories)
     } else {
-        setCategoryFilters(...categoryFilters, categoryId)
+        setCategoryFilters([...categoryFilters, categoryId])
     }
   }
   const handleSort = (value: string) => setSort(value)

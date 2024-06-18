@@ -27,7 +27,7 @@ export const ProductHero: React.FC<{
       <div className={classes.mediaWrapper}>
         {!metaImage && <div className={classes.placeholder}>No image</div>}
         {metaImage && typeof metaImage !== 'string' && (
-          <Media imgClassName={classes.image} resource={metaImage} fill />
+          <Media imgClassName={classes.image} resource={metaImage}  />
         )}
       </div>
 
@@ -60,7 +60,7 @@ export const ProductHero: React.FC<{
 
         <Price product={product} button={false} />
         <div className={classes.description}>
-          <h6>Description</h6>
+          <h6 className={classes.subtitle}>About</h6>
           <p>{description}</p>
         </div>
         <AddToCartButton product={product} className={classes.addToCartButton} />

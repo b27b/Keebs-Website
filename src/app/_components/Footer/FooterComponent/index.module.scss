@@ -17,6 +17,7 @@
     padding: 0;
     grid-template-columns: repeat(4, 1fr);
     margin: 100px 0;
+    font-size: 14px;
 
     @include large-break {
         grid-template-columns: repeat(2, 1fr);
@@ -81,4 +82,9 @@
 
 .icon{
   margin: 16px 0;
+  
+}
+
+.title{
+  font-size: 16px;
 }

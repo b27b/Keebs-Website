@@ -13,8 +13,7 @@
 
 .mediaWrapper {
   position: relative;
-  min-height: 400px;
-  background-color: var(--color-dark-50);
+  height:  90%;
 
   @include small-break {
     min-height: 250px;
@@ -22,10 +21,8 @@
 }
 
 .image {
-  padding: 24px;
   object-fit: contain;
   aspect-ratio: 1/1;
-  max-width: 100%;
 }
 
 .details {
@@ -56,4 +53,12 @@
 
 .description {
   padding: 30px 0;
+}
+
+.title{
+  font-weight: 500;
+}
+
+.subtitle{
+  font-weight: 500;
 }

@@ -24,8 +24,8 @@ const FooterComponent = ({footer} : {footer: Footer}) => {
               <Image
                 src={inclusion.icon}
                 alt={inclusion.title}
-                width={32}
-                height={32}
+                width={26}
+                height={26}
                 className={classes.icon}
               />
 

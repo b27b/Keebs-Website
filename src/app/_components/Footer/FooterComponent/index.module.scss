@@ -2,7 +2,7 @@
 
 .footer {
   padding: 30px 0;
-  background-color: var(--theme-elevation-1000);
+  background-color: #494048;
   color: var(--theme-elevation-0);
 
   @include small-break {
@@ -18,6 +18,7 @@
     grid-template-columns: repeat(4, 1fr);
     margin: 100px 0;
     font-size: 14px;
+    color: #494048;
 
     @include large-break {
         grid-template-columns: repeat(2, 1fr);
@@ -30,13 +31,6 @@
     @include extra-small-break{
         grid-template-columns: 1fr;
     }
-}
-
-:global([data-theme='dark']) {
-  .footer {
-    background-color: var(--theme-elevation-50);
-    color: var(--theme-elevation-1000);
-  }
 }
 
 .wrap {

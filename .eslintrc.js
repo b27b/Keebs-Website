@@ -1,7 +1,9 @@
+
 module.exports = {
   root: true,
-  extends: '@react-native-community',
+  extends: ['@react-native', 'prettier'],
   rules: {
-    'prettier/prettier': 0,
+    'react/react-in-jsx-scope': 'off',
+    'react-native/no-inline-styles': 'off',
   },
 };
